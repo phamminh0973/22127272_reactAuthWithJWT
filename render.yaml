@@ -5,7 +5,7 @@ services:
     env: node
     plan: free
     region: oregon
-    rootDirectory: mock-api
+    rootDir: mock-api
     buildCommand: npm install
     startCommand: npm start
     autoDeploy: true
