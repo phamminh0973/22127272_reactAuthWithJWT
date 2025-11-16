@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: react-jwt-mock-api
+    env: node
+    plan: free
+    region: oregon
+    rootDirectory: mock-api
+    buildCommand: npm install
+    startCommand: npm start
+    autoDeploy: true
+    envVars:
+      - key: ACCESS_TOKEN_SECRET
+        generateValue: true
+      - key: REFRESH_TOKEN_SECRET
+        generateValue: true
+      - key: ACCESS_TOKEN_TTL
+        value: 2m
+      - key: REFRESH_TOKEN_TTL
+        value: 30m
+      - key: MOCK_API_PORT
+        value: "10000"
