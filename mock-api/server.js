@@ -5,7 +5,12 @@ import jwt from 'jsonwebtoken'
 import { nanoid } from 'nanoid'
 
 const PORT = process.env.MOCK_API_PORT || 4000
-const ALLOWED_ORIGINS = (process.env.ALLOWED_ORIGINS || 'http://localhost:5173')
+const DEFAULT_ALLOWED_ORIGINS = [
+  'http://localhost:5173',
+  'https://22127272-react-auth-with-jwt.netlify.app',
+]
+
+const ALLOWED_ORIGINS = (process.env.ALLOWED_ORIGINS || DEFAULT_ALLOWED_ORIGINS.join(','))
   .split(',')
   .map((origin) => origin.trim())
 
